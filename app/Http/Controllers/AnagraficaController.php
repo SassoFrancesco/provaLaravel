@@ -34,11 +34,6 @@ class AnagraficaController extends Controller
     }
 
     public function store(Request $request){
-        $valdiated = $request->validate([
-            "cognome" => "required|max:10"
-        ]);
-
-        dd($valdiated);
 
         $cognome = $request->input("cognome");
         $nome=$request->input("nome");
@@ -60,9 +55,10 @@ class AnagraficaController extends Controller
 
         $dati->save();
 
-        $post = Post::find(12);
-
-        return redirect("view");
+        return [
+            "success" => true,
+            "data" => $dati
+        ];
     }
 }
 

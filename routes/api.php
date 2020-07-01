@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("dati", "AnagraficaController@index");
+Route::post("dati","AnagraficaController@store");
